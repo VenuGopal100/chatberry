@@ -13,11 +13,15 @@ function cookieOptions() {
 
   return {
     httpOnly: true,
-    secure: isProd,              // ✅ REQUIRED in production (HTTPS)
-    sameSite: isProd ? "none" : "lax", // ✅ REQUIRED for cross-site cookies
-    path: "/"
+    secure: isProd,
+    sameSite: isProd ? "none" : "lax",
+    path: "/",
+
+    // 🔥 REQUIRED for Render ↔ Vercel
+    domain: isProd ? ".onrender.com" : undefined
   } as const;
 }
+
 
 export async function signup(req: Request, res: Response) {
   try {
