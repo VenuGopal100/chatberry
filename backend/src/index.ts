@@ -17,20 +17,32 @@ const app = express();
 app.set("trust proxy", 1);
 
 const allowedOrigins = [
-  "http://localhost:5173",
-  "https://chatberry.vercel.app"
+  "http://localhost:5173"
 ];
 
 app.use(
   cors({
     origin: (origin, callback) => {
+      // allow server-to-server, curl, postman
       if (!origin) return callback(null, true);
-      if (allowedOrigins.includes(origin)) return callback(null, true);
+
+      // allow localhost
+      if (allowedOrigins.includes(origin)) {
+        return callback(null, true);
+      }
+
+      // allow ALL vercel preview + prod domains
+      if (origin.endsWith(".vercel.app")) {
+        return callback(null, true);
+      }
+
+      console.error("❌ Blocked by CORS:", origin);
       return callback(new Error("CORS not allowed"), false);
     },
     credentials: true
   })
 );
+
 
 app.use(express.json());
 app.use(cookieParser(process.env.COOKIE_SECRET));
