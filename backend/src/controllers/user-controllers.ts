@@ -15,10 +15,7 @@ function cookieOptions() {
     httpOnly: true,
     secure: isProd,
     sameSite: isProd ? "none" : "lax",
-    path: "/",
-
-    // 🔥 REQUIRED for Render ↔ Vercel
-    domain: isProd ? ".onrender.com" : undefined
+    path: "/"
   } as const;
 }
 
@@ -84,6 +81,7 @@ export async function login(req: Request, res: Response) {
     if (!ok) {
       return res.status(401).json({ message: "Invalid credentials" });
     }
+    console.log("NODE_ENV:", process.env.NODE_ENV);
 
     const token = createToken(user._id.toString(), user.email);
     res.cookie("token", token, cookieOptions());
