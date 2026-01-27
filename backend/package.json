@@ -5,7 +5,8 @@
   "main": "dist/index.js",
   "scripts": {
     "dev": "nodemon --watch src --ext ts --exec tsx src/index.ts",
-    "build": "tsc",
+    "build": "node ./node_modules/typescript/bin/tsc",
+
     "start": "node dist/index.js"
   },
   "dependencies": {
@@ -29,8 +30,7 @@
     "@types/node": "^22.5.5",
     "nodemon": "^3.1.4",
     "ts-node": "^10.9.2",
-    "tsc": "^2.0.4",
     "tsx": "^4.19.1",
-    "typescript": "^5.6.2"
+    "typescript": "^5.9.3"
   }
 }
