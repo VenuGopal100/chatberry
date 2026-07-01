@@ -11,7 +11,7 @@
 
 ## Live Demo
 
--   **Frontend (Vercel):** https://chatberry.vercel.app/chat
+-   **Frontend (Vercel):** https://chatberry.vercel.app
 -   **Backend (Render):** https://chatberry-backend.onrender.com
 
 ## Stable Version
