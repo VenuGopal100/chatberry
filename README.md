@@ -325,6 +325,14 @@ Production uses HTTPS, secure cookies, and environment variables.
 
 # Screenshots
 
+<img width="1495" height="712" alt="image" src="https://github.com/user-attachments/assets/038b279a-7cd4-45b1-82a8-d717ada04e8f" />
+
+<img width="1253" height="915" alt="image" src="https://github.com/user-attachments/assets/dfc1f25b-1809-444c-84fe-07e769818821" />
+<img width="1739" height="799" alt="image" src="https://github.com/user-attachments/assets/febbfbbe-7900-4a81-b210-2ab39b85ab77" />
+<img width="1541" height="868" alt="image" src="https://github.com/user-attachments/assets/71e1fe6e-9e50-48d8-97a1-a29d7c986d66" />
+
+
+
 Replace these placeholders.
 
 ``` text
